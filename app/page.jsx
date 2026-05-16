@@ -6,7 +6,9 @@ import TaskInput from '../components/TaskInput';
 import { useState } from 'react';
 import './globals.css';
 
-function addTask(text) {
+export default function Home() {
+
+  function addTask({text}) {
   const newTask = {
     id: Date.now(),
     text,
@@ -15,7 +17,6 @@ function addTask(text) {
   setTasks([...tasks, newTask]);
   }
 
-export default function Home() {
   const [tasks, setTasks] = useState([]);
   return (
     <main>
