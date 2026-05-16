@@ -5,7 +5,7 @@ export default function TaskList({tasks = []}) {
     <div>
       <h1>My To-Do List</h1>
       {tasks.map((task, index) => (
-        <TaskItem key={index} task={task} />
+        <TaskItem key={task.id} task={task} />
       ))}
     </div>
   );
