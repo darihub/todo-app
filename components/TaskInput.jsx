@@ -12,7 +12,10 @@ export default function TaskInput( {onAdd }) {
         onChange={(e) => setText(e.target.value)} 
         /* e: evento, e.target: input, e.target.value: valor del input (texto actual escrito) */
       />
-      <button onClick={() => onAdd(text)}>Add Task</button>
+      <button onClick={() => {
+        onAdd(text);
+        setText('');
+      }}>Add Task</button>
     </div>
   );
 }
