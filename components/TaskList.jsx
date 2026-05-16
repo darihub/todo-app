@@ -1,11 +1,12 @@
 import TaskItem from './TaskItem';
 
-export default function TaskList({ task1, task2 }) {
+export default function TaskList({tasks = []}) {
   return (
     <div>
       <h1>My To-Do List</h1>
-      <TaskItem task={task1} />
-      <TaskItem task={task2} />
+      {tasks.map((task, index) => (
+        <TaskItem key={index} task={task} />
+      ))}
     </div>
   );
 }
